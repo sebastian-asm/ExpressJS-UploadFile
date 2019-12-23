@@ -10,7 +10,7 @@ app.post('/upload', (req, res) => {
     return res.status(400).json({
       ok: false,
       error: {
-        mensaje: 'No hay archivos para subir'
+        mensaje: 'No hay archivo para subir'
       }
     });
   }
@@ -33,7 +33,10 @@ app.post('/upload', (req, res) => {
     });
   }
 
-  archivo.mv(`./uploads/${archivo.name}`, err => {
+  // Cambiando el nombre del archivo para evitar sobreescritura en el servidor
+  const nombreFinal = `${new Date().getTime()}.${extension}`;
+
+  archivo.mv(`./uploads/${nombreFinal}`, err => {
     if (err) {
       return res.status(500).json({
         ok: false,
