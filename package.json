@@ -18,6 +18,6 @@
   "homepage": "https://github.com/sebatstian-web/ExpressJS-FileUpload#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.6"
+    "express-fileupload": "^1.1.9"
   }
 }
